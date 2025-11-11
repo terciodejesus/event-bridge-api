@@ -28,4 +28,12 @@ describe('DocumentNumber', () => {
       'Número de documento inválido',
     );
   });
+
+  it('should return the formatted document number', () => {
+    const cpf = new DocumentNumber('794.705.460-67');
+    expect(cpf.getFormatted()).toBe('794.705.460-67');
+
+    const cnpj = new DocumentNumber('12.345.678/0001-95');
+    expect(cnpj.getFormatted()).toBe('12.345.678/0001-95');
+  });
 });
